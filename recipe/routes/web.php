@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MealPlanController;
@@ -28,7 +31,7 @@ Route::post('/newsletter', [NewsletterController::class, 'subscribe'])->name('ne
 Route::get('/unsubscribe/{email}/{token}', [NewsletterController::class, 'unsubscribe'])->name('unsubscribe');
 
 // Authenticated User Routes
-Route::middleware('auth')->group(function () {
+// Route::middleware('auth')->group(function () {
     // Profile Routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -49,7 +52,7 @@ Route::middleware('auth')->group(function () {
 
     // Shopping List
     Route::resource('shopping-list', ShoppingListController::class);
-});
+// });
 
 // Admin Routes
 Route::group(['middleware' => [AdminMiddleware::class], 'prefix' => 'admin'], function () {
@@ -106,6 +109,11 @@ Route::prefix('recipes')->name('recipes.')->group(function () {
 require __DIR__ . '/auth.php';
 
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+// Route::group(['prefix' => 'admin'], function () {
+//     Voyager::routes();
+// });
+Route::get('/login', [LoginController::class,'index'])->name('');
+Route::get('/register', [RegisterController::class,'index'])->name('');
+Route::post('/login', [LoginController::class, 'handle'])->name('login');
+Route::post('/register', [RegisterController::class, 'handle'])->name('register');
+Route::post('/logout', [LogoutController::class, 'handle'])->name('logout');

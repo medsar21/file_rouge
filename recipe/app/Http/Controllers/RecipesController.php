@@ -140,15 +140,12 @@ class RecipesController extends Controller
         // Handle image upload and store the image path
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imagePath = $image->store('public/recipe_images');
-
-            // Get the actual file name (without the directory path)
-            $imageFileName = Str::afterLast($imagePath, '/');
-            $imageFilePath = 'storage/recipe_images/' . $imageFileName;
-
-            // Update the image path in the validated data
+            $imageName = $image->getClientOriginalName();
+            $image->move(public_path('uploads/recipe_images'), $imageName);
+            $imageFilePath = 'uploads/recipe_images/' . $imageName;
             $validatedData['image'] = $imageFilePath;
         }
+        
 
         $userId = auth()->id();
 

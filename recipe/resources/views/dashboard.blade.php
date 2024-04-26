@@ -5,61 +5,39 @@
         </h2>
     </x-slot>
 
-    {{-- <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div> --}}
+    <style>
+        .dashboard-links {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
 
-    <div class="mt-5">
-        <a href="{{ route('starter.index') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            Home
-        </a>
-        <a href="{{ route('recipes.user.index') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            My Recipes
-        </a>
-        <a href="{{ route('recipes.index') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            Upload Recipe
-        </a>
-        <a href="{{ route('recipes.favorites.index') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            Favorite Recipes
-        </a>
-        <a href="{{ route('profile.edit') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            Edit Profile
-        </a>
-        <a href="{{ route('profile.collections') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            My Collections
-        </a>
-        <a href="{{ route('collections.create') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            Create a New Collection
-        </a>
-        <a href="{{ route('mealplan.showMealPlans') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            My Meal Plans
-        </a>
-        <a href="{{ route('mealplan.show') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            Create a New Meal Plan
-        </a>
-        {{-- Add Shopping List Later --}}
-        {{-- <a href="{{ route('collections.create') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            My Shopping List
-        </a> --}}
-        {{-- <a href="{{ route('collections.create') }}"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700">
-            Add To Shopping List
-        </a> --}}
+        .dashboard-link {
+            display: block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #4a5568;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-link:hover {
+            background-color: #edf2f7;
+            color: #2d3748;
+        }
+    </style>
+
+    <div class="mt-5 dashboard-links">
+        <a href="{{ route('starter.index') }}" class="dashboard-link">Home</a>
+        <a href="{{ route('recipes.user.index') }}" class="dashboard-link">My Recipes</a>
+        <a href="{{ route('recipes.index') }}" class="dashboard-link">Upload Recipe</a>
+        <a href="{{ route('recipes.favorites.index') }}" class="dashboard-link">Favorite Recipes</a>
+        <a href="{{ route('profile.edit') }}" class="dashboard-link">Edit Profile</a>
+        <a href="{{ route('profile.collections') }}" class="dashboard-link">My Collections</a>
+        <a href="{{ route('collections.create') }}" class="dashboard-link">Create a New Collection</a>
+        <a href="{{ route('mealplan.showMealPlans') }}" class="dashboard-link">My Meal Plans</a>
+        <a href="{{ route('mealplan.show') }}" class="dashboard-link">Create a New Meal Plan</a>
     </div>
 </x-app-layout>
