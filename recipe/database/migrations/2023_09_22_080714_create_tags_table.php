@@ -1,7 +1,10 @@
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\DB;
+<?php
 
-class InsertTagsData extends Migration
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -10,15 +13,11 @@ class InsertTagsData extends Migration
      */
     public function up()
     {
-        DB::table('tags')->insert([
-            ['name' => 'Beef'],
-            ['name' => 'Breakfast'],
-            ['name' => 'Chicken'],
-            ['name' => 'Food'],
-            ['name' => 'Potato'],
-            ['name' => 'Rice'],
-            ['name' => 'Stew'],
-        ]);
+        Schema::create('tags', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -28,6 +27,6 @@ class InsertTagsData extends Migration
      */
     public function down()
     {
-        DB::table('tags')->truncate();
+        Schema::dropIfExists('tags');
     }
 }

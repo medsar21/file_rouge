@@ -117,3 +117,5 @@ Route::get('/register', [RegisterController::class,'index'])->name('');
 Route::post('/login', [LoginController::class, 'handle'])->name('login');
 Route::post('/register', [RegisterController::class, 'handle'])->name('register');
 Route::post('/logout', [LogoutController::class, 'handle'])->name('logout');
+Route::post('/email/verification-notification', [VerificationController::class, 'send'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+Route::post('/reset-password', [ResetPasswordController::class, 'update'])->middleware('guest')->name('password.update');
