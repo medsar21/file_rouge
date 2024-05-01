@@ -1,7 +1,7 @@
 <style>
-   /* Navbar styles */
+/* Navbar styles */
 .navbar {
-    background-color: #4a5568; /* Background color */
+    background-color: #1a202c; /* Updated background color */
     color: #ffffff; /* Text color */
     padding: 1rem 0; /* Add padding */
 }
@@ -21,56 +21,24 @@
 }
 
 .nav-logo img {
-    width: 150px; /* Adjust logo size */
+    width: 120px; /* Updated logo size */
 }
 
 .nav-links {
     display: flex;
     align-items: center;
+    gap: 1.5rem; /* Adjust space between links */
 }
 
 .nav-link {
     text-decoration: none;
     color: #ffffff; /* Link color */
-    margin-right: 1.5rem;
     transition: color 0.3s ease;
+    font-size: 0.9rem; /* Updated font size */
 }
 
 .nav-link:hover {
     color: #cbd5e0; /* Hover color */
-}
-
-.nav-button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #ffffff; /* Button text color */
-    background-color: #4299e1; /* Button background color */
-    transition: background-color 0.3s ease;
-}
-
-.nav-button:hover {
-    background-color: #2c5282; /* Hover background color */
-}
-
-.dropdown-menu {
-    position: relative;
-}
-
-.dropdown-menu.show {
-    display: block;
-}
-
-.dropdown-item {
-    text-decoration: none;
-    color: #000000; /* Dropdown item text color */
-    padding: 0.5rem 1rem;
-    display: block;
-}
-
-.dropdown-item:hover {
-    background-color: #cbd5e0; /* Hover background color */
 }
 
 /* Responsive styles */
@@ -91,7 +59,7 @@
         top: 60px; /* Adjust the top position as needed */
         left: 0;
         width: 100%;
-        background-color: #4a5568; /* Updated background color */
+        background-color: #1a202c; /* Updated background color */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         z-index: 1;
     }
@@ -101,6 +69,8 @@
         margin-bottom: 1rem;
     }
 }
+
+
 
 </style>
 <nav class="navbar">
