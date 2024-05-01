@@ -101,7 +101,7 @@
                 <!-- If the user is authenticated, you can display a logout button instead -->
                 @auth
 
-                    <div class="dropdown-menu show no-style" aria-labelledby="userDropdown">
+                <div class="dropdown-menu show no-style bg-gray-100 border border-gray-200 rounded-lg">
                         <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ Auth::user()->name }}
