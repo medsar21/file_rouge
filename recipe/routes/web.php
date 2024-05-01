@@ -12,6 +12,7 @@ use App\Http\Controllers\StarterController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ShoppingListController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
@@ -49,7 +50,9 @@ Route::get('/unsubscribe/{email}/{token}', [NewsletterController::class, 'unsubs
     Route::get('/addRecipeMealPlan/{mealPlanId}', [MealPlanController::class, 'addRecipeMealPlan'])->name('mealplan.addRecipeMealPlan');
     Route::post('/mealplans/addRecipe/{mealPlanId}', [MealPlanController::class, 'addRecipe'])->name('mealplans.addRecipe');
 
-   
+    // Shopping List
+    Route::resource('shopping-list', ShoppingListController::class);
+// });
 
 // Admin Routes
 Route::group(['middleware' => [AdminMiddleware::class], 'prefix' => 'admin'], function () {
