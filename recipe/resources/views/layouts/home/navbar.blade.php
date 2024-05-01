@@ -136,7 +136,7 @@
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ Auth::user()->name }}
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="userDropdown">
+                        <div class="dropdown-menu " aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
                             <a class="dropdown-item" href="{{ route('profile.edit') }}">Edit Profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"

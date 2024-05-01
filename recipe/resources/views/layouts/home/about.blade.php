@@ -1,7 +1,7 @@
 @section('title', 'About Page')
 <main class="page">
     <section class="about-page">
-        <article>
+        <article class="border-2 bordre-black ">
             <h2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </h2>
@@ -15,7 +15,7 @@
         <section class="featured-recipes">
             <h5 class="featured-title">Look At This Awesomesouce!</h5>
             {{-- Recipes List --}}
-            <div class="recipes-list">
+            <div class="recipes-list flex justify-between w-full">
                 {{-- Single Recipe --}}
                 @foreach ($recipes as $recipe)
                     <a href="{{ route('recipes.single-recipe', ['id' => $recipe->id]) }}" class="recipe">
