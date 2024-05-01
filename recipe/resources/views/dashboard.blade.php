@@ -72,6 +72,7 @@
             <a href="{{ route('mealplan.show') }}" class="dashboard-link">Create a New Meal Plan</a>
         </div>
     </div>
+    @include('layouts.home.footer')
 
 </body>
 
