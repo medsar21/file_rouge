@@ -19,7 +19,7 @@ class ContactController extends Controller
         ];
 
         // Send the email
-        Mail::to('sarghinimed@gmail.com')->send(new ContactFormMail($formData));
+        Mail::to('mohamed12sar@gmail.com')->send(new ContactFormMail($formData));
 
         // Redirect back or to a success page
         return redirect()->route('starter.contact')->with('success', 'Your message has been sent.');

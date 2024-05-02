@@ -25,7 +25,6 @@ Route::get('/tags', [StarterController::class, 'tags'])->name('starter.tags');
 Route::get('/categories', [StarterController::class, 'categories'])->name('starter.categories');
 Route::get('/all/recipes', [StarterController::class, 'recipes'])->name('starter.recipes');
 Route::get('/contact', [StarterController::class, 'contact'])->name('starter.contact');
-// Route::get('/404', [StarterController::class, 'page404'])->name('starter.page404');
 Route::post('/contact-send', [ContactController::class, 'sendContactForm'])->name('contact.send');
 Route::post('/newsletter', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 Route::get('/unsubscribe/{email}/{token}', [NewsletterController::class, 'unsubscribe'])->name('unsubscribe');
@@ -44,7 +43,10 @@ Route::get('/unsubscribe/{email}/{token}', [NewsletterController::class, 'unsubs
 
     // Meal Plans
     Route::get('/mealplans/{id}', [MealPlanController::class, 'showPost'])->name('mealplan.post-page');
-    Route::get('/create/mealplan', [MealPlanController::class, 'show'])->name('mealplan.show');
+
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/create/mealplan', [MealPlanController::class, 'show'])->name('mealplan.show');
+    });
     Route::post('/create/mealplan', [MealPlanController::class, 'store'])->name('mealplan.store');
     Route::get('/mealplan', [MealPlanController::class, 'showMealPlans'])->name('mealplan.showMealPlans');
     Route::get('/addRecipeMealPlan/{mealPlanId}', [MealPlanController::class, 'addRecipeMealPlan'])->name('mealplan.addRecipeMealPlan');
@@ -83,9 +85,11 @@ Route::middleware(['auth'])->group(function () {
 Route::prefix('recipes')->name('recipes.')->group(function () {
     // Route::middleware(['auth', 'check-email-verification'])->group(function () {
         // Recipe Upload Routes
-        Route::get('/upload-recipe', [RecipesController::class, 'index'])->name('index');
-        Route::post('/upload-recipe', [RecipesController::class, 'store'])->name('store');
-        Route::get('/user', [RecipesController::class, 'userRecipes'])->name('user.index');
+        Route::middleware(['auth'])->group(function () {
+            Route::get('/upload-recipe', [RecipesController::class, 'index'])->name('index');
+            Route::post('/upload-recipe', [RecipesController::class, 'store'])->name('store');
+            Route::get('/user', [RecipesController::class, 'userRecipes'])->name('user.index');
+        });
 
         // Apply the recipes-ownership middleware to edit and update routes
         Route::middleware(['check-ownership'])->group(function () {

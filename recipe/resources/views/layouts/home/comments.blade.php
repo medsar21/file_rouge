@@ -75,8 +75,8 @@
                         @foreach ($comment->replies as $reply)
                             <li>
                                 <div class="comment">
-                                    <img src="{{ asset('storage/avatars/avatar-' . $reply->user->id . '.png') }}"
-                                        alt="User Avatar" width="40" class="mr-2">
+                                    <!-- <img src="{{ asset('storage/avatars/avatar-' . $reply->user->id . '.png') }}"
+                                        alt="User Avatar" width="40" class="mr-2"> -->
                                     <small class="comment-meta">By {{ $reply->user->name }} |
                                         {{ $reply->created_at->format('F d, Y') }}</small>
                                     <p>{{ $reply->content }}</p>

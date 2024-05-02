@@ -89,6 +89,7 @@
             <a href="{{ route('starter.categories') }}" class="nav-link">Categories</a>
             <a href="{{ route('starter.recipes') }}" class="nav-link">Recipes</a>
             <a href="{{ route('starter.contact') }}" class="nav-link">Contact</a>
+            <a href="{{ route('mealplan.show') }}" class = "nav-link">Add Meal Plan</a>
             <a href="/recipes/upload-recipe" class="nav-link">Add Recipe</a>
 
             <!-- Wrap login and signup buttons in a div and align them to the left -->

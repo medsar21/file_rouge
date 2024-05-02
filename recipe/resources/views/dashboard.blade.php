@@ -69,10 +69,10 @@
             <a href="{{ route('profile.collections') }}" class="dashboard-link">My Collections</a>
             <a href="{{ route('collections.create') }}" class="dashboard-link">Create a New Collection</a>
             <a href="{{ route('mealplan.showMealPlans') }}" class="dashboard-link">My Meal Plans</a>
-            <a href="{{ route('mealplan.show') }}" class="dashboard-link">Create a New Meal Plan</a>
+            <!-- <a href="{{ route('mealplan.show') }}" class="dashboard-link">Create a New Meal Plan</a> -->
         </div>
     </div>
-    @include('layouts.home.footer')
+
 
 </body>
 
