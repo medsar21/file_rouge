@@ -288,6 +288,7 @@ Navbar
 .nav-center {
     width: 90vw;
     max-width: var(--max-width);
+    bottom: 100px;
 }
 
 .nav-header {

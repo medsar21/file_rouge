@@ -32,5 +32,3 @@
     </form>
 
 </main>
-
-<script></script>
