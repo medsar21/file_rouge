@@ -35,7 +35,6 @@
                 <!-- Main Image -->
                 <a data-fancybox="recipe-gallery" href="{{ asset($recipe->image) }}">
                     <img src="{{ asset($recipe->image) }}" class="img recipe-hero-img" alt="Recipe Image">
-                    {{ asset( $recipe->image) }}
                 </a>
                 @if ($recipe->video_url)
                     <div class="video-container">

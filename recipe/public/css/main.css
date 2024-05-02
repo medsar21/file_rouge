@@ -1098,3 +1098,41 @@ ul {
     margin-top: 0.5rem;
     font-size: 0.9rem;
 }
+
+.collections-container{
+    /* border: 1px solid red; */
+    display: flex;
+    width: 95%;
+    margin: 20px auto;
+    justify-content: space-around;
+
+}
+
+.collection{
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.collection-name{
+    text-align: start;
+
+}
+.created{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.collection-createBy{
+    background-color: #007bff;
+    padding: 5px;
+    width: 55%;
+    height: 20%;
+    font-size: 18px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.dropdown-item{
+    text-decoration: none;
+}

@@ -13,11 +13,16 @@
         {{-- {{ dd($collections) }} --}}
         @if ($collections)
             @foreach ($collections as $collection)
+                
                 <div class="collection">
                     <h3><a
+                            class="collection-name"
                             href="{{ route('collections.showCollectionID', ['id' => $collection->id]) }}">{{ $collection->name }}</a>
                     </h3>
-                    <p>Created by: {{ $collection->user->name }}</p>
+                    <div class="created">
+                    <p>Created by: </p>
+                    <p class="collection-createBy">{{ $collection->user->name }}</p>
+                    </div>
 
                     {{-- <ul>
                         @foreach ($collection->recipes as $recipe)
